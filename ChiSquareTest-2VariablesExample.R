@@ -5,3 +5,4 @@ df <- read.csv("items-with-type-defective.csv")
 obs <- table(df$type, df$defective)
 
 chisq.test(obs)
+

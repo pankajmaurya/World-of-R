@@ -1,6 +1,6 @@
----
+------------------------------------------------------------------------
 
----
+------------------------------------------------------------------------
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
 
@@ -21,7 +21,7 @@ print(t.test(df$HPLC, df$NIR, paired = TRUE))
 
 Add a new chunk by clicking the *Insert*
 
-```{}
+```         
 ```
 
 *Chunk* button on the toolbar or by pressing *Cmd+Option+I*.

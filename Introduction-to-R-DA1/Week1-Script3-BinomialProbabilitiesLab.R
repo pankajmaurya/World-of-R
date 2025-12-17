@@ -1,0 +1,5 @@
+round(pnorm(2), digits = 4)
+round(pnorm(2, sd = 2) - pnorm(0, sd = 2), digits = 4)
+pnorm(1.96) - pnorm(-1.96)
+qnorm(0.975)
+round(qnorm(0.9), 4)
