@@ -44,3 +44,5 @@ dotplot(Freq ~ reorder(BMI_cat, Freq), data = rbdf, groups = Race1,
         par.settings = simpleTheme(pch = 16), auto.key = list(space = "right"))
 
 # Another way to visualize contingency tables is via mosaic plots - areas are proportional
+
+mosaicplot(rbtab2)
