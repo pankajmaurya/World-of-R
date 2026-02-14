@@ -6,7 +6,7 @@
 # cars <- Cars93[, c("Man.trans.avail", "Weight", "EngineSize", "Make", "Model", "MPG.city")]
 # 
 # write.csv(cars, "TechCareer/World-of-R/cars.csv")
-
+setwd("~")
 carsdf <- read.csv("TechCareer/World-of-R/cars.csv")
 head(carsdf)
 
