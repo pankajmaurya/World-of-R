@@ -1,7 +1,7 @@
 # Read file
 setwd("/Users/pankaj/TechCareer/World-of-R/Time-Series-Analysis-and-Forecasting")
 
-nifty <- read.csv("nifty1y.csv")
+nifty <- read.csv("nifty.csv")
 
 # Inspect
 head(nifty)
@@ -46,7 +46,7 @@ lines(nifty$t, predict(fit2), col="orange", lwd=2)
 
 
 # number of days to forecast
-k <- 90
+k <- 2
 
 n <- nrow(nifty)
 
