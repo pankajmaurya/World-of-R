@@ -23,7 +23,7 @@ SES = HoltWinters(TS, alpha = NULL, beta = FALSE, gamma = FALSE)
 plot(SES)
 
 library(forecast)
-Forecast_SES = forecast::forecast(SES, h = 1)
+Forecast_SES = forecast::forecast(SES, h = 10)
 plot(Forecast_SES)
 
 Forecast_SES
