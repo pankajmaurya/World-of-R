@@ -50,3 +50,17 @@ pacf(arima_residual^2, plot = TRUE)
 
 # Significant values for h = 1 indicates some AR like structure on the residual square
 # which was not there on the residuals themselves.
+
+
+library(FinTS)
+ArchTest(arima_residual)
+
+# pvalue is almost 0, reject null hypothesis. 
+
+library(fGarch)
+arch.fit <- garchFit(~garch(1, 0), data = arima_residual, trace = T)
+summary(arch.fit)
+
+
+cond.var <- arch.fit@h.t
+plot.ts(cond.var)
