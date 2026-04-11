@@ -5,7 +5,7 @@ par(mfrow=c(1, 2))
 plot.ts(noise)
 acf(noise)
 
-# model y_t = t_{t - 1} + e_t
+# model y_t = y_{t - 1} + e_t
 RW = numeric(100)
 RW = noise[1]
 for (i in 2:100)
