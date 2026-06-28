@@ -22,3 +22,11 @@ points(7:12, condmeans, col="red", pch=16)
 lines(7:12, condmeans, col="red")
 
 # conditional means line and fitted model are very close.
+
+#### PQ 2.13 is also on the same data. but it uses a polynomial model.
+lmgirl2 = lm(Height ~ poly(Age, 2, raw = T), data = girlgrowth)
+summary(lmgirl2)
+
+girlgrowth$Age2 = girlgrowth$Age^2
+lmgirl2_2 = lm(Height ~ Age + Age2, data = girlgrowth)
+summary(lmgirl2_2)
