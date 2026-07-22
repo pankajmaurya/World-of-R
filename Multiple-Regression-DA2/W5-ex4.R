@@ -28,7 +28,7 @@ round(max(vif(lmHighway)), 2)
 cisv(lmHighway)
 
 
-#############
+ #############
 library(alr4);  data("Highway")
 
 lograte = log(Highway$rate)
