@@ -80,3 +80,22 @@ crit <- rbind(criter(lm2), criter(lm3))
 crit <- as.data.frame(crit,row.names=modelnames)
 colnames(crit) <- c("PRESS", "Predicted R square", "AIC","BIC")
 crit
+
+# graded 
+library(alr4)
+data("wblake")
+head(wblake)
+lmfish <- lm(Age ~ Length + I(Length^2) + Scale, data = wblake)
+LengthSq <- wblake$Length^2
+xlist = cbind(wblake$Length, LengthSq, wblake$Scale)
+leaps(x = xlist, y = wblake$Age, method = "Cp", nbest = 1)
+criter(lm(Age ~ Length + LengthSq, data = wblake))
+
+data("MinnWater")
+head(MinnWater)
+lmwater <- lm(allUse ~ muniUse + agPrecip + muniPrecip + statePop, data = MinnWater)
+xlist = cbind(MinnWater$muniUse, MinnWater$agPrecip, MinnWater$muniPrecip, MinnWater$statePop)
+leaps(x = xlist, y = MinnWater$allUse, method = "Cp", nbest = 1)
+# best size = 3
+leaps(x = xlist, y = MinnWater$allUse, method = "adjr2", nbest = 1)
+# best size = 3
