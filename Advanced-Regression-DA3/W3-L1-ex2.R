@@ -43,3 +43,11 @@ text(1,-2,paste("AD p-value", ad))
 # PQ 3.5
 data("drugprice")
 ?drugprice
+lmdrugs <- lm(OriginatorMPR~GenericMPR, data = drugprice)
+qqnorm(stdres(lmdrugs))
+qqline(stdres(lmdrugs))
+lm0 = lmdrugs
+shapiro.test(stdres(lm0))
+ks.test(stdres(lm0), pnorm)
+ad.test(stdres(lm0))
+
