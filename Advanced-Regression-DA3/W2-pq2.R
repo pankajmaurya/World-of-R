@@ -18,26 +18,26 @@ lmAT5 = lm(AT~Waist,data=waist,weights = 1/Waist^5)
 par(mfrow=c(2,2))
 
 plot(Waist,stdres(lmAT1),ylab="Standardized residual")
-e2 = stdres(lmAT1)^2
+e2 = stdres(lmAT1)
 x = waist$Waist
 lines(sort(x),loess(e2[order(x)]~sort(x),span=2)$fit)
 
 title("weights = 1/Waist")
 
 plot(Waist,stdres(lmAT2),ylab="Standardized residual")
-e2 = stdres(lmAT2)^2
+e2 = stdres(lmAT2)
 x = waist$Waist
 lines(sort(x),loess(e2[order(x)]~sort(x),span=2)$fit)
 title("weights = 1/Waist^2")
 
 plot(Waist,stdres(lmAT3),ylab="Standardized residual")
-e2 = stdres(lmAT3)^2
+e2 = stdres(lmAT3)
 x = waist$Waist
 lines(sort(x),loess(e2[order(x)]~sort(x),span=2)$fit)
 title("weights = 1/Waist^3")
 
 plot(Waist,stdres(lmAT5),ylab="Standardized residual")
-e2 = stdres(lmAT5)^2
+e2 = stdres(lmAT5)
 x = waist$Waist
 lines(sort(x),loess(e2[order(x)]~sort(x),span=2)$fit)
 title("weights = 1/Waist^5")
@@ -50,8 +50,26 @@ data("waist")
 lmwaist <- lm(AT~Waist, data=waist)
 plot(waist$Waist, stdres(lmwaist))
 
-par(mfrow=c(1,1))
+par(mfrow=c(2,2))
 e2 = stdres(lmwaist)^2
+plot(waist$Waist,e2,ylab="Standardized residual squared")
+x = waist$Waist
+lines(sort(x),loess(e2[order(x)]~sort(x),span=2)$fit)
+
+lmwaist5 = lm(AT~Waist,data=waist,weights = 1/Waist^5)
+e2 = stdres(lmwaist5)^2
+plot(waist$Waist,e2,ylab="Standardized residual squared")
+x = waist$Waist
+lines(sort(x),loess(e2[order(x)]~sort(x),span=2)$fit)
+
+lmwaist2 = lm(AT~Waist,data=waist,weights = 1/Waist^2)
+e2 = stdres(lmwaist2)^2
+plot(waist$Waist,e2,ylab="Standardized residual squared")
+x = waist$Waist
+lines(sort(x),loess(e2[order(x)]~sort(x),span=2)$fit)
+
+lmwaist3 = lm(AT~Waist,data=waist,weights = 1/Waist^3)
+e2 = stdres(lmwaist3)^2
 plot(waist$Waist,e2,ylab="Standardized residual squared")
 x = waist$Waist
 lines(sort(x),loess(e2[order(x)]~sort(x),span=2)$fit)

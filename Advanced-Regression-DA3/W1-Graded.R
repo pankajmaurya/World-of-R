@@ -31,6 +31,7 @@ data("MinnWater")
 ?MinnWater
 lmwater <- lm(muniUse~muniPrecip+muniPop+year, data=MinnWater)
 par(mfrow=c(1,3))
+library(MASS)
 plot(MinnWater$muniPrecip, stdres(lmwater))
 plot(MinnWater$muniPop, stdres(lmwater))
 plot(MinnWater$year, stdres(lmwater))
